@@ -1,11 +1,12 @@
+/* eslint-disable max-len */
 import React from 'react';
 import {
   BrowserRouter as Router,
   Switch, 
   Route
 } from 'react-router-dom';
-import PokemonContainer from '../../container/pokemon/PokemonContainer';
-import PokemonListContainer from '../../container/pokemon/PokemonListContainer';
+import PokemonContainer from '../../container/pokemon/PokemonContainer.jsx';
+import PokemonListContainer from '../../container/pokemon/PokemonListContainer.jsx';
 
 
 export default function App() {

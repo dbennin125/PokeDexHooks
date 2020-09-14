@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { useListPokemon } from '../../hooks/pokemon/PokemonListHook';
-import PokemonListView from '../../components/pokemon/PokemonListView';
+import { useListPokemon } from '../../hooks/pokemon/PokemonListHook.jsx';
+import PokemonListView from '../../components/pokemon/PokemonListView.jsx';
 
 const PokemonListContainer = () => {
 
