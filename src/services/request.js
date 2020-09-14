@@ -14,7 +14,6 @@ const request = (path, method, body) => {
       if(!ok) throw json;
       return json;
     });
-
 };
 
 export const get = path => request(path, 'GET');

@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const PokemonView = ({ id, name, image, attack, defense, speed, HP }) => 
-  (
-    <figure id={id}>
-      <img src={image} alt={image}/>
-      <figcaption>
+const PokemonView = ({ id, name, image, attack, defense, speed, HP }) => (
+  <figure id={id}>
+    <img src={image} alt={image}/>
+    <figcaption>
             Pokemon: {name}, 
             HP:  {HP},   
             Attack:  {attack}, 
             Defense:  {defense}, 
             Speed:  {speed} 
-      </figcaption>
-    </figure>
-  );
+    </figcaption>
+  </figure>
+);
 
 PokemonView.propTypes = {
   id: PropTypes.string.isRequired,

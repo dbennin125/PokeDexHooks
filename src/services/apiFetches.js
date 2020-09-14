@@ -9,6 +9,6 @@ export const getAllPokemon = (page) => {
   return get(`?page=${page}&perPage=50`);
 };
 
-export const fetchPokemonByID = (id) => {
+export const fetchOnePokemon = id => {
   return get(`/${id}`);
 };

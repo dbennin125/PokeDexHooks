@@ -1,17 +1,18 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const PokemonByID = ({ name, id, height, weight, experience, type, attack, defense, hp, speed, hidden_ability, image, }) => {
+const PokemonByID = ({ id, name, height, weight, experience, type, attack, defense, hp, speed, hidden_ability, image, }) => {
   return (
-    <div id={id}>
+    <>
       <h2>{name}</h2>
-      <img src={image} alt={image}/>
-      <h5>Height: {height} and weight: {weight}</h5>
-      <p>{name} has a base experience of {experience} and starting HP of {hp}.
-        {name} is a {type} type of Pokemon with attack of {attack}, a defense of {defense}, speed of {speed}.
-        {name}&apos;s secret ability is {hidden_ability}. </p>
-    </div>
+      <Link key={id} to={'/'}>
+        <img src={image} alt={image}/>
+      </Link>
+      <h5>Height: {height} and Weight: {weight}</h5>
+      <p>{name} has a base experience of {experience} and starting HP of {hp}.  {name} is a {type} type of Pokemon with attack of {attack}, a defense of {defense}, speed of {speed}. {name}&apos;s secret ability is {hidden_ability}. </p>
+    </>
   );
 };
 
