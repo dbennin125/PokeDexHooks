@@ -8,6 +8,4 @@ const PokemonContainer = () => {
         <PokemonByID {...pokemon}
     )
 }
-
-
 export default PokemonContainer
