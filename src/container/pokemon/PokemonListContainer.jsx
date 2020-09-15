@@ -1,14 +1,19 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useListPokemon } from '../../hooks/pokemon/PokemonListHook.jsx';
 import PokemonListView from '../../components/pokemon/PokemonListView.jsx';
+import SelectorContainer from './SelectorContainer.jsx';
+
 
 const PokemonListContainer = () => {
+  const [sortType, setSortState] = useState('fire');
 
   const { pokemon, loading, currentPage, totalPages, handleClick } = useListPokemon();
   if(loading) return <h1>Loading....</h1>;
+
   return (
     <>
+      <SelectorContainer/>
       {currentPage < totalPages && <button name="next" onClick={handleClick}>Next</button>}
       {currentPage} / {totalPages}
       {currentPage > 1 && <button name="previous" onClick={handleClick}>Previous</button>}

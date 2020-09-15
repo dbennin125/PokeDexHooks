@@ -12,3 +12,11 @@ export const getAllPokemon = (page) => {
 export const fetchOnePokemon = id => {
   return get(`/${id}`);
 };
+
+export const fetchAllTypes = () => {
+  return get('/types');
+};
+
+// export const fetchTypeOf = type => {
+//   return get(`?sort=${type}&direction=asc&perPage=50`);
+// };
