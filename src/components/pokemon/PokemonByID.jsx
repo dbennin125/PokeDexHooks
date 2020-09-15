@@ -29,7 +29,9 @@ PokemonByID.propTypes = {
   hp: PropTypes.number,
   speed: PropTypes.number,
   hidden_ability: PropTypes.string,
-  image: PropTypes.string
+  image: PropTypes.string,
+  ability1: PropTypes.string,
+  ability2: PropTypes.string
 };
 
 export default PokemonByID;

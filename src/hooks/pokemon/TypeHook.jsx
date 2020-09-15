@@ -2,27 +2,21 @@
 import { useEffect, useState } from 'react';
 
 import React from 'react';
-import { fetchAllTypes } from '../../services/apiFetches';
+import { fetchAllTypes, fetchTypeOf } from '../../services/apiFetches';
 import { useListPokemon } from './PokemonListHook';
 
 
-export const useTypeHook = () => {
+export const useTypeHook = filter => {
   const [pokeType, setType] = useState([]);
   const [change, setChange] = useState(true);
-  const { pokemon } = useListPokemon();
+  const [TypeOfPokemon, setTypeOfPokemon] = useState([]);
  
-  // useEffect(() => {
-  //   const sortArray = type => {
-  //     const types = (
-  //       fetchAllTypes()
-  //         .then(results => results.map(result => setType(result.type)))
-  //     );
-  //     const sortProperty = types[type];
-  //     const sorted = [...pokemon].sort((a, b) => b[sortProperty] - a[sortProperty]);
-  //     setChange(sorted);
-  //   };
-  //   sortArray(change);
-  // }, [id]);
+ 
+  useEffect(() => {
+    fetchAllTypes()
+      .then(response => response.map(item => item.type))
+      .then(setType);
+  }, [change]);
   
   return {
     pokeType

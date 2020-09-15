@@ -28,7 +28,8 @@ PokemonListView.propTypes = {
     attack: PropTypes.number,
     defense: PropTypes.number,
     speed: PropTypes.number,
-    HP: PropTypes.number
+    HP: PropTypes.number,
+    type1: PropTypes.string
   }))
 };
 

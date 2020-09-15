@@ -1,11 +1,12 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const PokemonView = ({ id, name, image, attack, defense, speed, HP }) => (
+const PokemonView = ({ id, name, image, attack, defense, speed, HP, type1 }) => (
   <figure id={id}>
     <img src={image} alt={image}/>
-    <figcaption>
+    <figcaption id={type1}>
             Pokemon: {name}, 
             HP:  {HP},   
             Attack:  {attack}, 
@@ -22,7 +23,8 @@ PokemonView.propTypes = {
   attack: PropTypes.number,
   defense: PropTypes.number,
   speed: PropTypes.number,
-  HP: PropTypes.number
+  HP: PropTypes.number,
+  type1: PropTypes.string
 };
 
 export default PokemonView;

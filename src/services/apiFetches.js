@@ -17,6 +17,6 @@ export const fetchAllTypes = () => {
   return get('/types');
 };
 
-// export const fetchTypeOf = type => {
-//   return get(`?sort=${type}&direction=asc&perPage=50`);
-// };
+export const fetchByName = (name, page) => {
+  return get(`?pokemon=${name}&page=${page}&perPage=50`);
+};

@@ -7,10 +7,10 @@ import {  usePokemonHook } from '../../hooks/pokemon/PokemonHook';
 const PokemonContainer = () => {
   const { id } = useParams();
   const { pokemon } = usePokemonHook(id);
-
-    
   return (
     <>
+      {/* <h2>HEllo
+      </h2> */}
       <PokemonByID { ...pokemon} />
     </>
   );

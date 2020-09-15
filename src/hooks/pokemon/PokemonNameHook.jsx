@@ -1,18 +1,15 @@
 /* eslint-disable max-len */
-import { useEffect, useState } from 'react';
-import { getAllPokemon } from '../../services/apiFetches';
+import React, { useState, useEffect } from 'react';
+import { fetchByName } from '../../services/apiFetches';
 
 
-export const useListPokemon = () => {
-
-  const [pokemon, setPokemon] = useState([]);
+export const usePokemonNameHook = name => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [loading, setLoading] = useState(false);
-  
+  const [pokemonByName, setPokemonByName] = useState([]);
+
   useEffect(() => {
-    setLoading(true);
-    getAllPokemon(currentPage)
+    fetchByName(name, currentPage)
       .then(({ count, perPage, results }) => results.map(result => ({
         count,
         perPage,
@@ -26,23 +23,24 @@ export const useListPokemon = () => {
         type1: result.type_1
       })))
       .then(result => {
-        setPokemon(result);
+        setPokemonByName(result);
         const totalPages = Math.ceil(result[0].count / result[0].perPage);
         setTotalPages(totalPages);
-      })
-      .finally(() => setLoading(false));
+      });
+
   }, [currentPage]);
-  
+
   const handleClick = ({ target }) => {
     if(target.name === 'next') setCurrentPage(currentPage => currentPage + 1);
     if(target.name === 'previous') setCurrentPage(currentPage => currentPage - 1);
   };
 
+
   return {
-    pokemon, 
     currentPage,
-    totalPages,
-    handleClick,
-    loading
+    pokemonByName,
+    totalPages, 
+    handleClick
   };
 };
+
