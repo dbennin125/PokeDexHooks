@@ -1,3 +1,31 @@
-.navBar {
-    
+.header{
+    background-color: rgb(255,202,6);
+    color: rgb(255,255,255);
+    text-decoration: blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    text-align: center;
+    width: 75;
+    height: 20%;
+    margin: 10px;
+    margin-bottom: 20px;
+    border: 10px;
+    padding: 20px;
+    border: rgb(66,86,166);
+    border-width: 10px;
+    border-style: solid;
+    img {
+        height: 75px;
+    }
+    nav {
+    display: grid;
+
+    }
+    a {
+        color: rgb(238,64,53);
+        }
 }
+
+

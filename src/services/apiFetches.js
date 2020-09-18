@@ -17,7 +17,7 @@ export const fetchAllTypes = () => {
   return get('/types');
 };
 
-export const fetchByName = (name,  page = 1) => {
+export const fetchByName = (name = '',  page = 1) => {
   return get(`?pokemon=${name}&page=${page}&perPage=50`);
 };
 

@@ -4,7 +4,7 @@ import { fetchByName } from '../../services/apiFetches';
 
 
 export const usePokemonNameHook = name => {
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [pokemonByName, setPokemonByName] = useState([]);
 
