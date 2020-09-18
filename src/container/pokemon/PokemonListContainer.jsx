@@ -1,16 +1,12 @@
 /* eslint-disable max-len */
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useListPokemon } from '../../hooks/pokemon/PokemonListHook.jsx';
 import PokemonListView from '../../components/pokemon/PokemonListView.jsx';
-import SelectorContainer from './SelectorContainer.jsx';
-import { useTypeHook } from '../../hooks/pokemon/TypeHook.jsx';
-
 
 const PokemonListContainer = () => {
 
   const { pokemon, loading, currentPage, totalPages, handleClick } = useListPokemon();
   if(loading) return <h1>Loading....</h1>;
-
 
   return (
     <>

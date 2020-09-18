@@ -27,7 +27,7 @@ export const useListPokemon = () => {
       })))
       .then(result => {
         setPokemon(result);
-        const totalPages = Math.ceil(result[0].count / result[0].perPage);
+        const totalPages = Math.ceil(result[0]?.count / result[0]?.perPage);
         setTotalPages(totalPages);
       })
       .finally(() => setLoading(false));

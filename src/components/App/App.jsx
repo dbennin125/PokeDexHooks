@@ -8,14 +8,16 @@ import {
 import PokeContainer from '../../container/pokemon/PokeContainer.jsx';
 import PokemonContainer from '../../container/pokemon/PokemonContainer.jsx';
 import PokemonListContainer from '../../container/pokemon/PokemonListContainer.jsx';
-
+import SortAndSearchContainer from '../../container/pokemon/SortAndSearchContainer.jsx';
 
 export default function App() {
   return <Router>
     <Switch>
       <Route exact path="/" component={PokemonListContainer}/>
-      <Route path="/pokemon/:name" component={PokeContainer} />
-      <Route  exact path="/:id" component={PokemonContainer} />
+      <Route path="/pokemon/search/:name" component={PokeContainer} />
+      <Route path="/pokemon/search/" component={SortAndSearchContainer} />
+      <Route  exact path="/pokemon/id/:id" component={PokemonContainer} />
     </Switch>
+    
   </Router>;
 }

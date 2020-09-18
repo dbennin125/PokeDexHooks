@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import PokemonByID from '../../components/pokemon/PokemonByID';
+import DetailedPokemon from '../../components/pokemon/DetailedPokemon';
 import {  usePokemonHook } from '../../hooks/pokemon/PokemonHook';
 
 
@@ -9,9 +9,7 @@ const PokemonContainer = () => {
   const { pokemon } = usePokemonHook(id);
   return (
     <>
-      {/* <h2>HEllo
-      </h2> */}
-      <PokemonByID { ...pokemon} />
+      <DetailedPokemon { ...pokemon} />
     </>
   );
 };
