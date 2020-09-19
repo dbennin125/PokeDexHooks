@@ -30,7 +30,7 @@ const SelectorContainer = () => {
       </select>
       {noPokemon && currentPage < totalPages && <button name="next" onClick={handleClick}>Next</button>}
       {noPokemon && currentPage } {noPokemon && <> / </>} {noPokemon && totalPages}
-      {noPokemon && currentPage > 1 && <button name="previous" onClick={handleClick}>Previous</button>}
+      {noPokemon && currentPage > 1  && <button name="previous" onClick={handleClick}>Previous</button>}
       {sortedPokemon &&  <PokemonListView pokemon={sortedPokemon}/> }
     </>
   );

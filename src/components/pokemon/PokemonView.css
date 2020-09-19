@@ -1,0 +1,32 @@
+* {
+    box-sizing: content-box;
+}
+.Pokemon {
+    width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+    padding-right: 40px;
+    background-color:rgb(227,53,13);
+    color: rgb(66,86,166);
+    border:  rgb(66,86,166);
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px 5px  rgb(255,202,6);
+    margin: 10px;
+    padding: 10px;
+    margin-bottom: 70px;
+}
+
+a {
+    text-shadow: .7px .75px .75px black;
+    :hover{
+        text-shadow: 3px 5px 7px black;
+    }
+}
+
+
+

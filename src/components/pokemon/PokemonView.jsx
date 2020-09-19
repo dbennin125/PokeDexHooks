@@ -1,17 +1,16 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import styles from './PokemonView.css';
 
 const PokemonView = ({ id, name, image, attack, defense, speed, HP, type1 }) => (
-  <figure id={id}>
+  <figure className={styles.Pokemon} id={id}>
     <img src={image} alt={image}/>
-    <figcaption id={type1}>
-            Pokemon: {name}, 
-            HP:  {HP},   
-            Attack:  {attack}, 
-            Defense:  {defense}, 
-            Speed:  {speed} 
+    <figcaption id={type1, speed}>
+            Pokemon: {name}, <br/>
+            HP:  {HP},   <br/>
+            Attack:  {attack}, <br/>
+            Defense:  {defense}
     </figcaption>
   </figure>
 );

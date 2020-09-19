@@ -1,14 +1,12 @@
 .header{
     background-color: rgb(255,202,6);
     color: rgb(255,255,255);
-    text-decoration: blue;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 3fr 4fr 3fr;
+    text-shadow: black .7px 1.1px 1.3px;
+    justify-items: center;
     align-content: center;
     text-align: center;
-    width: 75;
-    height: 20%;
     margin: 10px;
     margin-bottom: 20px;
     border: 10px;
@@ -16,16 +14,18 @@
     border: rgb(66,86,166);
     border-width: 10px;
     border-style: solid;
+    border-radius: 20px;
+    box-shadow: 8px 8px 18px rgb(161,158,158);
     img {
         height: 75px;
     }
     nav {
-    display: grid;
-
+        display: grid;
+    grid-column: auto;
+    justify-items: center;
     }
     a {
         color: rgb(238,64,53);
+        text-decoration: none;
         }
 }
-
-
