@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import PokemonListView from '../../components/pokemon/PokemonListView';
 import { usePokemonNameHook } from '../../hooks/pokemon/PokemonNameHook';
+import styles from './PokemonSearchContainer.css';
 
 const PokemonSearchContainer = () => {
   const [searchedPokemon, setSearchedPokemon] = useState('');
@@ -10,13 +11,15 @@ const PokemonSearchContainer = () => {
   const oneOrMorePokemon = searchedPokemon.length > 0;
 
   return (
-    <>
-      <input type="text" placeholder="Search Pokemon by Name" value={searchedPokemon} name="searchedPokemon" onChange={({ target }) => setSearchedPokemon(target.value)} />
-      {oneOrMorePokemon && currentPage < totalPages && <button name="next" onClick={handleClick}>Next</button>}
-      {oneOrMorePokemon && currentPage} {oneOrMorePokemon && <> / </>}  {oneOrMorePokemon && totalPages}
-      {oneOrMorePokemon && currentPage > 1 && <button name="previous" onClick={handleClick}>Previous</button>}
+    <div className={styles.Search}>
+      <div className={styles.Buttons}>
+        <input type="text" placeholder="Search Pokemon Name" value={searchedPokemon} name="searchedPokemon" onChange={({ target }) => setSearchedPokemon(target.value)} />
+        <button disabled={currentPage === 1 || !oneOrMorePokemon} name="previous" onClick={handleClick}>&lt;</button>
+        {oneOrMorePokemon && currentPage} {oneOrMorePokemon && <> / </>}  {oneOrMorePokemon && totalPages}
+        <button disabled={currentPage === totalPages || !oneOrMorePokemon}  name="next" onClick={handleClick}>&gt;</button>
+      </div>
       {searchedPokemon && <PokemonListView pokemon={pokemonByName}/>}
-    </>
+    </div>
   );
 };
 

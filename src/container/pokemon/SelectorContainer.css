@@ -1,0 +1,50 @@
+* {
+    box-sizing: content-box;
+}
+
+.MainContainer {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(158, 176, 181);
+    margin-bottom: 70px;
+    border:  rgb(66,86,166);
+    border-width: 10px;
+    margin: 10px;
+    border-style: solid;
+    border-radius: 20px;
+    text-align: center;
+    padding-right: 41px;
+    
+    .Buttons {
+        width: auto;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+    }
+    
+    a {
+        text-decoration:none;
+        transform: scale(1.05);
+        :hover {
+            cursor: pointer;
+            color: springgreen;
+            transform: scale(1.05);
+            transition: .75s ease-in-out;
+            transition-delay: .75s;
+        }
+    
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+}
+
+
+

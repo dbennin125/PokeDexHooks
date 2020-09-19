@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import PokemonListView from '../../components/pokemon/PokemonListView.jsx';
 import { useGetPokemonTypeHook } from '../../hooks/pokemon/getByTypeHook.jsx';
 import { useTypeHook } from '../../hooks/pokemon/TypeHook.jsx';
+import styles from './SelectorContainer.css';
 
 const SelectorContainer = () => {
   const [typeOfPokemon, setTypeOfPokemon] = useState([]);
@@ -14,10 +15,10 @@ const SelectorContainer = () => {
     setTypeOfPokemon({ filter: e.target.value });
   };
 
-  const noPokemon = sortedPokemon.length > 0;
+  const oneOrMorePokemon = sortedPokemon.length > 0;
   
   return (
-    <>
+    <div className={styles.SelectorContainer}>
       <select onChange={handleChange}>
         <option value="">Sort by...</option>
         {
@@ -28,11 +29,14 @@ const SelectorContainer = () => {
             )
         }
       </select>
-      {noPokemon && currentPage < totalPages && <button name="next" onClick={handleClick}>Next</button>}
-      {noPokemon && currentPage } {noPokemon && <> / </>} {noPokemon && totalPages}
-      {noPokemon && currentPage > 1  && <button name="previous" onClick={handleClick}>Previous</button>}
-      {sortedPokemon &&  <PokemonListView pokemon={sortedPokemon}/> }
-    </>
+      <div className={styles.Buttons}>
+        <button disabled={currentPage === 1 || !oneOrMorePokemon} name="previous" onClick={handleClick}>&lt;</button>
+        {oneOrMorePokemon && currentPage } {oneOrMorePokemon && <> / </>} {oneOrMorePokemon && totalPages}
+        <button disabled={currentPage === totalPages || !oneOrMorePokemon} name="next" onClick={handleClick}>&gt;</button>
+       
+        {sortedPokemon &&  <PokemonListView pokemon={sortedPokemon}/> }
+      </div>
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@
   align-items: center;
     padding-right: 40px;
     background-color:rgb(227,53,13);
-    color: rgb(66,86,166);
+    color: whitesmoke;
     border:  rgb(66,86,166);
     border-width: 10px;
     border-style: solid;
@@ -22,7 +22,8 @@
 }
 
 a {
-    text-shadow: .7px .75px .75px black;
+
+    text-shadow: 3px 2px 5px black;
     :hover{
         text-shadow: 3px 5px 7px black;
     }
