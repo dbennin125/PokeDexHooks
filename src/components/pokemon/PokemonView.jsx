@@ -1,10 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './PokemonView.css';
 
 const PokemonView = ({ id, name, image, attack, defense, speed, HP, type1 }) => (
-  <figure className={styles.Pokemon} id={id}>
+  <figure id={id}>
     <img src={image} alt={image}/>
     <figcaption id={type1, speed}>
             Pokemon: {name}, <br/>
