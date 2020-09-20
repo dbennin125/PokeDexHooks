@@ -22,11 +22,12 @@ export const useListPokemon = () => {
         image: result.url_image,
         attack: result.attack,
         defense: result.defense,
-        speed: result.speed
+        speed: result.speed,
+        type1: result.type_1
       })))
       .then(result => {
         setPokemon(result);
-        const totalPages = Math.ceil(result[0].count / result[0].perPage);
+        const totalPages = Math.ceil(result[0]?.count / result[0]?.perPage);
         setTotalPages(totalPages);
       })
       .finally(() => setLoading(false));
