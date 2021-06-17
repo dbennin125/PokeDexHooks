@@ -2,6 +2,7 @@
 
 exports[`App component renders App 1`] = `
 <BrowserRouter>
+  <Header />
   <Switch>
     <Route
       component={[Function]}
@@ -10,7 +11,16 @@ exports[`App component renders App 1`] = `
     />
     <Route
       component={[Function]}
-      path="/:id"
+      path="/pokemon/search/:name"
+    />
+    <Route
+      component={[Function]}
+      path="/pokemon/search/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/pokemon/id/:id"
     />
   </Switch>
 </BrowserRouter>
